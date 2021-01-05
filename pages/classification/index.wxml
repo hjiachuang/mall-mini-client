@@ -1,0 +1,37 @@
+<!--分类页-->
+<view class="classification">
+  <view class="classification-search-wrapper" id="classification_search_wrapper">
+    <my-search bindsearch="bindSearch"></my-search>
+  </view>
+  <view class="classification-catalog" wx:if="{{classificationList}}">
+    <scroll-view scroll-y="true" class="classification-catalog-navbar" id="classification_catalog_navbar">
+      <view wx:for="{{classificationList}}" wx:key="id" data-index="{{index}}" bindtap="switchCate" class="classification-catalog-navbar-item {{ index===selectedItem ? 'active' : ''}}" >
+        <view class="classification-catalog-navbar-item-active-tab"></view>
+        <view class="classification-catalog-navbar-item-name">
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y="true" enable-back-to-top="true" class="classification-catalog-content" id="classification_catalog_content" scroll-into-view="{{scrollId}}" scroll-with-animation="true" enhanced="true" show-scrollbar="false" bindscroll="scroll" data-index="{{index}}">
+      <view wx:for="{{classificationList}}" wx:key="name" id="{{'classification' + index}}" class="classification-catalog-content-item">
+        <view class="classification-catalog-content-item-title font-type-body-text-1">
+          <view class="classification-catalog-content-item-title-decorate left" style="background-image: url('{{globalData.rootPath + 'static/images/icon-decorate.png'}}')"></view>
+          <text>{{item.name}}</text>
+          <view class="classification-catalog-content-item-title-decorate right" style="background-image: url('{{globalData.rootPath + 'static/images/icon-decorate.png'}}')"></view>
+        </view>
+        <view wx:for="{{item.subclass}}" wx:key="subclassName" wx:for-item="subclass" class="classification-catalog-content-item-subclass">
+          <view class="classification-catalog-content-item-subclass-title font-type-body-text-3">
+            <text>{{subclass.subclassName}}</text>
+          </view>
+          <view class="classification-catalog-content-item-subclass-list">
+            <view wx:for="{{subclass.item}}" wx:key="name" wx:for-item="subclassItem" class="classification-catalog-content-item-subclass-item" data-class="{{item.name}}" data-subClass="{{subclass.subclassName}}" data-name="{{subclassItem.name}}"  bindtap="toProductList">
+              <image class="classification-catalog-content-item-subclass-item-image" src="{{globalData.rootPath + subclassItem.img}}" mode="widthFix" lazy-load="true"></image>
+              <text class="classification-catalog-content-item-subclass-item-name font-type-body-text-4"> {{subclassItem.name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="classification-scroll-placeholder"></view>
+    </scroll-view>
+  </view>
+</view>

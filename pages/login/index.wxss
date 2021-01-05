@@ -1,0 +1,44 @@
+/* pages/login/login.wxss */
+.login {
+  background-color: var(--color-13);
+  width:750rpx;
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  top: 200rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 351rpx;
+  height: 300rpx;
+  margin: 0 auto;
+}
+
+.login-btn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-top: 100rpx;
+  transform: translateX(-50%);
+  color: #ffffff;
+  background-color: var(--color-8);
+}
+
+.desc {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  margin-top: 200rpx;
+  text-align: center;
+}
+
+.home-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 40rpx;
+  transform: translateX(-50%);
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: var(--color-12);
+}

@@ -1,0 +1,7 @@
+<!--登录页面-->
+<view class="login">
+  <image class="logo" src="{{logo_url}}"></image>
+  <button class="login-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+  <text class="desc font-type-body-text-2">为了提供良好的服务，请先授权登录</text>
+  <button class="home-btn" size="mini" bindtap="toHome">返回首页</button>
+</view>

@@ -1,0 +1,34 @@
+/* pages/coupon/coupon.wxss */
+.coupon-navbar {
+  height: 100rpx;
+  box-shadow: 0 0 100rpx 1rpx #f5f5f5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.coupon-navbar text {
+  height: 60rpx;
+  color: var(--font-color-light);
+  border-bottom: 4rpx solid transparent;
+}
+
+.coupon-navbar text.active {
+  color: var(--font-color-default);
+  border-bottom-color: var(--color-yellow);
+}
+
+.coupon-content {
+  height: calc(100vh - 100rpx);
+  white-space: nowrap;
+}
+
+.coupon-list {
+  display: inline-block;
+  width: 750rpx;
+  height: 100%;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  overflow: auto;
+  vertical-align: top;
+}

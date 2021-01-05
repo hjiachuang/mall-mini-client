@@ -1,0 +1,25 @@
+<!--优惠券页-->
+<view class="coupon">
+  <view class="coupon-navbar">
+    <text class="{{selectItem === 'enable'? 'active': ''}}" data-tag="enable" bindtap="changeTag">可使用</text>
+    <text class="{{selectItem === 'enabled'? 'active': ''}}" data-tag="enabled" bindtap="changeTag">已使用</text>
+    <text class="{{selectItem === 'invalid'? 'active': ''}}" data-tag="invalid" bindtap="changeTag">已失效</text>
+  </view>
+  <scroll-view class="coupon-content" scroll-x="{{scrollX}}" scroll-left="{{scrollLeft}}" scroll-with-animation="true">
+    <view class="coupon-list coupon-enable">
+      <block wx:for="{{coupon.enable}}" wx:key="id">
+        <my-coupon couponData="{{item}}" type="enable"></my-coupon>
+      </block>
+    </view>
+    <view class="coupon-list coupon-enabled">
+      <block wx:for="{{coupon.enabled}}" wx:key="id">
+        <my-coupon couponData="{{item}}" type="enabled"></my-coupon>
+      </block>
+    </view>
+    <view class="coupon-list coupon-invalid">
+      <block wx:for="{{coupon.invalid}}" wx:key="id">
+        <my-coupon couponData="{{item}}" type="invalid"></my-coupon>
+      </block>
+    </view>
+  </scroll-view>
+</view>

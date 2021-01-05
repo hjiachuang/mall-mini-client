@@ -1,0 +1,38 @@
+<!--订单页-->
+<view class="order">
+  <view class="order-navbar">
+    <text class="{{selectItem === 'allOrder'? 'active font-type-subtitle-bold': 'font-type-body-text-2'}}" data-tag="allOrder" bindtap="changeTag">全部订单</text>
+    <text class="{{selectItem === 'toBeConfirmed'? 'active font-type-subtitle-bold': 'font-type-body-text-2'}}" data-tag="toBeConfirmed" bindtap="changeTag">待确认</text>
+    <text class="{{selectItem === 'toBeDelivered'? 'active font-type-subtitle-bold': 'font-type-body-text-2'}}" data-tag="toBeDelivered" bindtap="changeTag">待发货</text>
+    <text class="{{selectItem === 'toBeReceived'? 'active font-type-subtitle-bold': 'font-type-body-text-2'}}" data-tag="toBeReceived" bindtap="changeTag">待收货</text>
+    <text class="{{selectItem === 'toBeEvaluated'? 'active font-type-subtitle-bold': 'font-type-body-text-2'}}" data-tag="toBeEvaluated" bindtap="changeTag">待评价</text>
+  </view>
+  <scroll-view class="order-content" scroll-x="{{scrollX}}" scroll-left="{{scrollLeft}}" scroll-with-animation="true">
+    <view class="order-list order-all-order"><!--所有订单-->
+      <block wx:for="{{order}}" wx:key="orderId">
+        <my-order-list class="order-item" orderData="{{item}}"></my-order-list>
+      </block>  
+    </view>
+    <view class="order-list order-to-be-confirmed"><!--待确认订单-->
+      <block wx:for="{{order}}" wx:key="orderId">
+        <my-order-list class="order-item" orderData="{{item}}" wx:if="{{item.orderState === '1' || item.orderState === '2'}}"></my-order-list>
+      </block>
+    </view>
+    <view class="order-list order-to-be-delivered"><!--待发货订单-->
+      <block wx:for="{{order}}" wx:key="orderId">
+        <my-order-list class="order-item" orderData="{{item}}" wx:if="{{item.orderState === '3'}}"></my-order-list>
+      </block>
+    </view>
+    <view class="order-list order-to-be-received"><!--待收货订单-->
+      <block wx:for="{{order}}" wx:key="orderId">
+        <my-order-list class="order-item" orderData="{{item}}" wx:if="{{item.orderState === '4'}}"></my-order-list>
+      </block>
+    </view>
+    <view class="order-list order-to-be-evaluated"><!--待评价订单-->
+      <block wx:for="{{order}}" wx:key="orderId">
+        <my-order-list class="order-item" orderData="{{item}}" wx:if="{{item.orderState === '5'}}"></my-order-list>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+

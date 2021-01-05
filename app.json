@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classification/index",
+    "pages/car/index",
+    "pages/mine/index",
+    "pages/product-list/index",
+    "pages/productDetail/index",
+    "pages/order/index",
+    "pages/coupon/index",
+    "pages/address/index",
+    "pages/selectAddress/index",
+    "pages/add-or-edit-address/index",
+    "pages/about/index",
+    "pages/buy/index",
+    "pages/login/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f38181",
+    "navigationBarTitleText": "Aidiouteの商城",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#f38181",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/icon-home.png",
+        "selectedIconPath": "/static/images/icon-home-active.png"
+      },
+      {
+        "pagePath": "pages/classification/index",
+        "text": "分类",
+        "iconPath": "/static/images/icon-classification.png",
+        "selectedIconPath": "/static/images/icon-classification-active.png"
+      },
+      {
+        "pagePath": "pages/car/index",
+        "text": "购物车",
+        "iconPath": "/static/images/icon-car.png",
+        "selectedIconPath": "/static/images/icon-car-active.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "/static/images/icon-mine.png",
+        "selectedIconPath": "/static/images/icon-mine-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

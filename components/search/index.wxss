@@ -1,0 +1,47 @@
+/* components/search/index.wxss */
+
+.search-component {
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: var(--color-13);
+}
+
+.search-component-input {
+  flex: auto;
+  box-sizing: border-box;
+  height: 67rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.search-component-input-icon-search {
+  position: absolute;
+  left: 10rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+}
+
+.search-component-input-input {
+  height: 67rpx;
+  padding-left: 52rpx;
+}
+
+.search-component-input-icon-cancel {
+  position: absolute;
+  top: 0;
+  right: 10rpx;
+  height: 67rpx;
+  padding: 0 10rpx;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+}
+
+.search-component-cancel {
+  margin-left: 20rpx;
+  white-space: nowrap;
+}

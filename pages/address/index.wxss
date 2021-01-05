@@ -1,0 +1,124 @@
+/* pages/address/address.wxss */
+page {
+  background-color: var(--color-13);
+}
+
+.no-address {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.no-address image {
+  width: 313rpx;
+  height: 300rpx;
+}
+
+.no-address text {
+  margin: 20rpx 0 40rpx;
+}
+
+.has-address {
+  padding: 0 24rpx 150rpx;
+}
+
+.address-item {
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  padding: 24rpx;
+  background-color: #ffffff;
+}
+
+.address-item .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address-item .center {
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 4rpx solid #f9f9f9;
+}
+
+.address-item .bottom {
+  margin-top: 20rpx;
+}
+
+.address-item .bottom-left {
+  float: left;
+}
+
+.bottom-left text {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: var(--color-9);
+}
+
+.bottom-left text.text-red {
+  color: var(--color-7);
+}
+
+.address-item .bottom-right {
+  float: right;
+  display: flex;
+}
+
+.bottom-right view {
+  margin-left: 40rpx;
+}
+
+.bottom-right text {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: var(--color-9);
+}
+
+.bottom-right image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.add-address {
+  position: fixed;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+  background-color: var(--color-8);
+}
+
+.to-add {
+  color: #ffffff;
+  background-color: var(--color-8);
+}
+
+/* 当前页面的 checkbox 样式 */
+.address checkbox {
+  width: 35rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  padding: 0;
+}
+
+.address checkbox .wx-checkbox-input{
+  width: 33rpx;
+  height: 33rpx;
+  border-radius: 50%;
+  border: 2rpx solid gray;
+  box-sizing: border-box;
+}
+
+.address checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border-color: var(--color-7);
+}
+
+.address checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  font-size: 0;
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  background: var(--color-7);
+}

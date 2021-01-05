@@ -1,0 +1,13 @@
+<!--遮罩组件-->
+<view class="component-mask" wx:if="{{show}}">
+  <view class="component-mask-content">
+    <view class="component-mask-icon">
+      <view class="loading" wx:if="{{type === 'loading'}}">
+        <image src="/static/images/icon-loading.svg"></image>
+      </view>
+    </view>
+    <view class="component-mask-title font-type-body-text-3">
+      <text>{{title}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!--订单列表项组件-->
+<view class="order-item-component">
+  <view class="top clearfix">
+    <text class="float-left font-type-body-text-1">订单号: {{orderData.orderId}}</text>
+    <text class="float-right font-type-subtitle-bold">{{orderStatusList[orderData.orderState]}}</text>
+  </view>
+  <view class="center">
+    <view class="center-left">
+      <image src="{{globalData.rootPath + orderData.orderContent.mainPic[0]}}"></image>
+    </view>
+    <view class="center-center">
+      <view class="order-item-name">
+        <text class="font-type-body-text-1">{{orderData.orderContent.name}}</text>
+      </view>
+      <view class="order-item-skus font-type-body-text-4">
+        <view wx:if="{{orderData.orderContent.skus['规格']}}">规格: {{orderData.orderContent.skus['规格']}}</view>
+        <view wx:if="{{orderData.orderContent.skus['颜色']}}">颜色: {{orderData.orderContent.skus['颜色']}}</view>
+      </view>
+    </view>
+    <view class="center-right font-type-body-text-2">
+      <text>¥ {{orderData.orderContent.discount}}</text>
+      <text>¥ {{orderData.orderContent.original}}</text>
+      <text>x{{orderData.orderAmount}}</text>
+    </view>
+  </view>
+  <view class="bottom font-type-body-text-1">
+    <text>合计: ¥ {{price}} (含运费 ¥ {{orderData.orderContent.carriage}})</text>
+  </view>
+  <view class="button">
+    <button wx:if="{{orderData.orderState === '1' || orderData.orderState === '2' || orderData.orderState === '3'}}" size="mini" plain="true">取消订单</button>
+    <button wx:if="{{orderData.orderState === '1'}}" size="mini" plain="true" class="btn-light">去支付</button>
+    <button wx:if="{{orderData.orderState === '2' || orderData.orderState === '3'}}" size="mini" plain="true">催单</button>
+    <button wx:if="{{orderData.orderState === '4'}}" size="mini" plain="true">查看物流</button>
+    <button wx:if="{{orderData.orderState === '4'}}" size="mini" plain="true" class="btn-light">确认收货</button>
+    <button wx:if="{{orderData.orderState === '5'}}" size="mini" plain="true">评价</button>
+    <button wx:if="{{orderData.orderState === '0'}}" size="mini" plain="true" class="btn-light">再来一单</button>
+  </view>
+</view>

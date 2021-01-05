@@ -1,0 +1,22 @@
+<!--搜索框组件-->
+<view class="search-component">
+  <view class="search-component-input">
+    <icon class="search-component-input-icon-search" type="search" size="15"></icon>
+    <input 
+      class="search-component-input-input font-type-body-text-1" 
+      type='text' 
+      confirm-type="search"
+      value="{{value}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="font-type-body-text-4"
+      focus="{{focus}}"
+      bindfocus="bindFocus"
+      bindblur="bindBlur"
+      bindinput="bindInput"
+    ></input>
+    <view class="search-component-input-icon-cancel" bindtap="deleteValue" wx:if="{{value}}">
+      <icon type="cancel" size="15"></icon>
+    </view>
+  </view>
+  <view class="search-component-cancel font-type-body-text-2" wx:if="{{showSearch}}" bindtap="search">搜索</view>
+</view>

@@ -1,0 +1,72 @@
+/**index.wxss**/
+page {
+  background-color: var(--color-13);
+  min-height: 100vh;
+}
+
+.index-banner-wrapper .index-banner-swiper {
+  background-color: #ffffff;
+  height: 300rpx;
+  overflow: hidden;
+}
+
+.index-banner-wrapper .index-banner-swiper-item image {
+  width: 130%;
+  height: auto;
+  margin-left: -15%;
+  margin-top: -5%;
+}
+
+.index-navbar-wrapper{
+  display: grid;
+  grid-template-columns: 142rpx 142rpx 142rpx 142rpx 142rpx;
+  grid-row-gap: 20rpx;
+}
+
+.index-navbar-wrapper .navbar-image{
+  margin: 0 auto;
+  width: 100rpx;
+  height: 100rpx;
+  background-size: 1000rpx;
+  background-repeat: no-repeat;
+}
+
+.index-navbar-wrapper .navbar-name {
+  text-align: center;
+}
+
+.index-navbar-wrapper, .index-recommend-wrapper {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+
+.index-recommend-wrapper .title {
+  text-align: center;
+}
+
+.index-recommend-wrapper .title image {
+  width: 300rpx;
+  height: 50rpx;
+}
+
+.index-recommend-wrapper .recommend-list {
+  display: grid;
+  grid-template-columns: 345rpx 345rpx;
+  grid-column-gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.recommend-item {
+  border-radius: 16rpx;
+  padding-bottom: 10rpx;
+  box-shadow: 0 0 20rpx rgba(12,17,18,0.05);
+  overflow: hidden;
+}
+
+.index-footer-wrapper {
+  background: #ffffff;
+  padding: 10rpx 0;
+  text-align: center;
+  color: var(--color-12);
+}

@@ -1,0 +1,198 @@
+/* pages/car/car.wxss */
+.shopping-cart {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-13);
+}
+
+.shopping-cart-not-logged-in, .shopping-cart-is-empty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.shopping-cart-not-logged-in image, .shopping-cart-is-empty image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.shopping-cart-not-logged-in text, .shopping-cart-is-empty text {
+  margin: 40rpx 0;
+}
+
+.default-button {
+  color: #ffffff;
+  background-color: var(--color-8);
+}
+
+.shopping-cart-content {
+  padding-bottom: 130rpx;
+}
+
+.valid-content-title, .invalid-content-title {
+  width: 690rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 40rpx auto 0rpx;
+  padding: 0rpx 24rpx;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0 0 50rpx 10rpx rgba(12,17,18,0.05);
+}
+
+.valid-content-title {
+  margin-top: 20rpx;
+}
+
+.invalid-item {
+  text-decoration: line-through;
+}
+
+.shopping-cart-item {
+  width: 690rpx;
+  overflow: hidden;
+  margin: 10rpx auto;
+  padding: 10rpx 24rpx 20rpx;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.shopping-cart-item-top {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.shopping-cart-item-top checkbox {
+  flex: 0;
+}
+
+.commodity-name {
+  flex: 1;
+  margin-left: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.shopping-cart-item-content {
+  display: flex;
+}
+
+.commodity-master-image image {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 16rpx;
+}
+
+.commodity-skus {
+  margin-left: 20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.commodity-skus text {
+  padding: 4rpx 8rpx;
+  border-radius: 10rpx;
+}
+
+.commodity-price {
+  width: 150rpx;
+}
+
+.commodity-price >text {
+  display: block;
+  text-align: right;
+}
+
+.original-price {
+  text-decoration: line-through;
+}
+
+.shopping-cart-control {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120rpx;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.shopping-cart-control-left {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.shopping-cart-control-right {
+  display: flex;
+  padding-right: 20rpx;
+  align-items: center;
+}
+
+.shopping-cart-control .shopping-cart-control-delete {
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  margin: 0;
+  padding: 0;
+  border-radius: 25rpx;
+  border: 1rpx solid var(--color-4);
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: var(--color-7);
+}
+
+.shopping-cart-control .shopping-cart-control-submit {
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 0;
+  padding: 0;
+  font-size: 30rpx;
+  color: #ffffff;
+  border-radius: 70rpx;
+  background-color: var(--color-4);
+}
+
+
+
+/* 当前页面的 checkbox 样式 */
+.shopping-cart-item checkbox {
+  width: 42rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  padding: 0;
+}
+
+.shopping-cart checkbox .wx-checkbox-input{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 2rpx solid var(--color-4);
+  box-sizing: border-box;
+}
+
+.shopping-cart checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+}
+
+.shopping-cart checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  font-size: 0;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: var(--color-4);
+}

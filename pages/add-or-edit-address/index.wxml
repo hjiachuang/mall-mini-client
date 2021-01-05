@@ -1,0 +1,33 @@
+<!-- 新增或编辑地址页 -->
+<view class="add-or-edit-address">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <mp-form id="form" rules="{{rules}}" models="{{addressInfo}}">
+    <mp-cells title="新增/编辑地址">
+      <mp-cell prop="addressee" ext-class="font-type-subtitle-bold" title="收件人">
+        <input bindinput="formInputChange" data-field="addressee"  name="addressee" placeholder="请输入收件人姓名" value="{{addressInfo.addressee}}"/>
+      </mp-cell>
+      <mp-cell prop="phoneNumber" ext-class="font-type-subtitle-bold" title="电话号码">
+        <input bindinput="formInputChange" data-field="phoneNumber" name="phoneNumber" placeholder="请输入收件人电话"
+          value="{{addressInfo.phoneNumber}}" />
+      </mp-cell>
+      <mp-cell prop="area" ext-class="font-type-subtitle-bold" title="所在地区">
+        <picker data-field="area" mode="region" value="{{addressInfo.area}}" name="area" bindchange="bindRegionChange">
+          <view class="area-picker">
+            {{addressInfo.area[0]}}，{{addressInfo.area[1]}}，{{addressInfo.area[2]}}
+          </view>
+        </picker>
+      </mp-cell>
+      <mp-cell prop="detailedAddress" ext-class="font-type-subtitle-bold" title="详细地址">
+        <input bindinput="formInputChange" data-field="detailedAddress" name="detailAddress" placeholder="请输入详细地址"
+          value="{{addressInfo.detailedAddress}}" />
+      </mp-cell>
+      <view class="default-address">
+        <checkbox checked="{{addressInfo.default}}" data-field="addressDefault" name="defaultAddress" bindtap="formInputChange"></checkbox>
+        <text class="font-type-subtitle-bold {{addressInfo.default? 'text-red':''}}">默认地址</text>
+      </view>
+      <view class="button">
+        <button bindtap="submitForm">保存</button>
+      </view>
+    </mp-cells>
+  </mp-form>
+</view>

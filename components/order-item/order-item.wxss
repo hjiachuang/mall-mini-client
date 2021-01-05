@@ -1,0 +1,75 @@
+/* components/order-list/order-list.wxss */
+.order-item-component {
+  width: 100%;
+}
+
+.order-item-component .top {
+  padding-left: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.order-item-component .center {
+  width: 100%;
+  display: flex;
+}
+
+.order-item-component .center-left {
+  width: 152rpx;
+  height: 152rpx;
+}
+
+.order-item-component .center-left image {
+  width: 152rpx;
+  height: 152rpx;
+}
+
+.order-item-component .center-center {
+  margin: 0 20rpx;
+  flex: 1;
+  white-space: normal;
+}
+
+.order-item-component .center-center .order-item-name {
+  line-height: 36rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.order-item-component .center-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.order-item-component .center-right text:nth-child(2) {
+  text-decoration: line-through;
+}
+
+.order-item-component .center-right text:nth-child(1) {
+  color: var(--color-7);
+}
+
+.order-item-component .bottom {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+}
+
+.order-item-component .button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+}
+
+.order-item-component .button button {
+  font-size: 28rpx;
+  margin: 0 4rpx;
+}
+
+.order-item-component .button button.btn-light {
+  color: var(--color-7);
+  border-color: var(--color-7);
+}

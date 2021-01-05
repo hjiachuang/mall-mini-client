@@ -1,0 +1,84 @@
+<!--我的页-->
+<view class="mine">
+  <mp-toptips msg="{{toptipsMsg}}" type="error" show="{{toptipsShow}}"></mp-toptips>
+  <view class="mine-top">
+    <view class="mine-info clearfix">
+      <view class="mine-info-content float-left">
+        <view class="mine-info-user" wx:if="{{globalData.loginStatus}}">
+          <text class="mine-info-name font-type-subtitle-bold">{{globalData.userInfo.nickName}}</text>
+        </view>
+        <view class="mine-info-login" wx:else>
+          <button class="font-type-subtitle-bold" open-type="getUserInfo" bindgetuserinfo="getUserInfo">立即登录</button>
+        </view>
+      </view>
+      <view class="mine-info-avatar float-left">
+        <view class="mine-info-has-avatar" wx:if="{{globalData.loginStatus}}">
+          <image src="{{globalData.userInfo.avatarUrl}}" mode="widthFix" />
+        </view>
+        <view class="mine-info-no-avatar" wx:else>
+          <image src="{{globalData.rootPath + 'static/images/icon-no-avatar.svg'}}" />
+        </view>
+      </view>
+    </view>
+    <view class="mine-order-other">
+      <view data-tag="toBeConfirmed" bindtap="toOrder">
+        <image src="{{globalData.rootPath + '/static/images/待付款.png'}}"></image>
+        <text class="font-type-body-text-1">待确认</text>
+      </view>
+      <view data-tag="toBeDelivered" bindtap="toOrder">
+        <image src="{{globalData.rootPath + '/static/images/待发货.png'}}"></image>
+        <text class="font-type-body-text-1">待发货</text>
+      </view>
+      <view data-tag="toBeReceived" bindtap="toOrder">
+        <image src="{{globalData.rootPath + '/static/images/待收货.png'}}"></image>
+        <text class="font-type-body-text-1">待收货</text>
+      </view>
+      <view data-tag="toBeEvaluated" bindtap="toOrder">
+        <image src="{{globalData.rootPath + '/static/images/反馈.png'}}"></image>
+        <text class="font-type-body-text-1">待评价</text>
+      </view>
+    </view>
+  </view>
+  <view class="mine-bottom">
+    <view class="text-line-container clearfix" data-tag="allOrder" bindtap="toOrder">
+      <view class="font-type-body-text-1 float-left">
+        <text>全部订单</text>
+      </view>
+      <view class="float-right">
+        <image src="{{globalData.rootPath + '/static/images/right.png'}}"></image>
+      </view>
+    </view>
+    <view class="text-line-container clearfix" data-page="coupon" bindtap="toPage">
+      <view class="font-type-body-text-1 float-left">
+        <text>我的优惠券</text>
+      </view>
+      <view class="float-right">
+        <image src="{{globalData.rootPath + '/static/images/right.png'}}"></image>
+      </view>
+    </view>
+    <view class="text-line-container clearfix">
+      <view class="font-type-body-text-1 float-left">
+        <text>领券中心</text>
+      </view>
+      <view class="float-right">
+        <image src="{{globalData.rootPath + '/static/images/right.png'}}"></image>
+      </view>
+    </view>
+    <view class="text-line-container clearfix" data-page="address" bindtap="toPage">
+      <view class="font-type-body-text-1 float-left">
+        <text>地址管理</text>
+      </view>
+      <view class="float-right">
+        <image src="{{globalData.rootPath + '/static/images/right.png'}}"></image>
+      </view>
+    </view>
+    <view class="text-line-container clearfix" data-page="about" bindtap="toPage">
+      <view class="font-type-body-text-1 float-left">
+        <text>关于我们</text>
+      </view>
+      <view class="float-right">
+        <image src="{{globalData.rootPath + '/static/images/right.png'}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+/* components/mask/mask.wxss */
+.component-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: var(--color-13);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.component-mask-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.component-mask-icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.component-mask-icon image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.component-mask .loading {
+  animation: loadings 1.5s linear infinite;
+}
+
+.component-mask-title {
+  margin-top: 20rpx;
+}
+
+@keyframes loadings {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

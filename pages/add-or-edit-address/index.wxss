@@ -1,0 +1,57 @@
+/* pages/add-or-edit-address/add-or-edit-address.wxss */
+page {
+  background-color: var(--color-13);
+}
+
+.add-or-edit-address {
+  padding: 24rpx;
+}
+
+.default-address {
+  margin: 30rpx 0 30rpx 30rpx;
+}
+
+.default-address text {
+  margin-left: 20rpx;
+}
+
+.default-address text.text-red {
+  color: var(--color-7);
+}
+
+.button {
+  padding-bottom: 20rpx;
+}
+
+.button button {
+  background-color: var(--color-5);
+  color: #ffffff;
+}
+
+/* 当前页面的 checkbox 样式 */
+.add-or-edit-address checkbox {
+  width: 35rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  padding: 0;
+}
+
+.add-or-edit-address checkbox .wx-checkbox-input{
+  width: 33rpx;
+  height: 33rpx;
+  border-radius: 50%;
+  border: 2rpx solid gray;
+  box-sizing: border-box;
+}
+
+.add-or-edit-address checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border-color: var(--color-7);
+}
+
+.add-or-edit-address checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  font-size: 0;
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  background: var(--color-7);
+}

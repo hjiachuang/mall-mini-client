@@ -1,0 +1,16 @@
+/* pages/product-list/product-list.wxss */
+
+.product-list-content {
+  margin: 32rpx 26rpx 0;
+  display: grid;
+  grid-template-columns: 338rpx 338rpx;
+  grid-column-gap: 22rpx;
+}
+
+.product-list-item {
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  box-shadow: 0 0 20rpx rgba(12, 17, 18, 0.05);
+  overflow: hidden;
+}

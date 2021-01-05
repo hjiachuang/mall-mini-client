@@ -1,0 +1,80 @@
+<!--商品详情页-->
+<view class="product-detail" wx:if="{{product}}">
+  <view class="product-detail-image">
+    <swiper class="product-detail-image-swiper" indicator-dots="true" indicator-active-color="#fff" indicator-color="#ccc"
+        autoplay="true" circular="true">
+      <block wx:for="{{product.mainPic}}" wx:key="*this">
+        <swiper-item class="product-detail-image-swiper-item {{'item' + index}}">
+          <image src="{{globalData.rootPath + item}}" mode="heightFix"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="product-detail-message">
+    <view class="product-detail-price">
+      <text class="product-detail-price-discount font-type-header-h1">¥{{product.discount}}</text>
+      <text class="product-detail-price-original font-type-body-text-4">原价: ¥{{product.original}}</text>
+    </view>
+    <view class="product-detail-name font-type-header-h2">
+      <text>{{product.name}}</text>
+    </view>
+    <view class="product-detail-skus font-type-body-text-4">
+      <text wx:if="{{product.skus['规格']}}">
+        规格: {{product.skus['规格']}}
+      </text>
+      <text wx:if="{{product.skus['颜色']}}">
+        颜色: {{product.skus['颜色']}}
+      </text>
+    </view>
+    <view class="product-detail-other-message">
+      <text class="product-detail-sales">销量: <text>{{product.sales}}件</text></text>
+      <text class="product-detail-stock">库存: <text>{{product.stock}}件</text></text>
+      <text class="product-detail-carriage">运费: <text>{{product.carriage}}元</text></text>
+    </view>
+  </view>
+  <view class="product-detail-navbar {{fixedNav? 'fixedTop': ''}}">
+    <text class="{{selectItem === 'details'? 'active': ''}}" data-name="details" bindtap="changeSelectItem">宝贝详情</text>
+    <text class="{{selectItem === 'comments'? 'active': ''}}" data-name="comments" bindtap="changeSelectItem">宝贝评价({{product.comments.amount}})</text>     
+  </view>
+  <view class="product-detail-content {{fixedNav? 'fixedTop': ''}}" id="product_detail_content">
+    <view class="product-detail-content-details-image" wx:if="{{selectItem === 'details'}}">
+      <image wx:for="{{product.detailsPic}}" wx:key="*this" src="{{globalData.rootPath + item}}" mode="widthFix"></image>
+    </view>
+    <view class="product-detail-content-comment" wx:if="{{selectItem === 'comments'}}">
+      <view class="comment-item" wx:for="{{product.comments.content}}">
+        <view class="comment-item-top clearfix">
+          <image class="comment-item-userpic" src="{{item.userPic}}" mode="widthFix"></image>
+          <text class="comment-item-username font-type-body-text-1">{{item.username}}</text>
+          <view class="comment-item-score">
+            <image wx:for="{{item.score}}" src="{{globalData.rootPath + 'static/images/star.png'}}" wx:key="*this"></image>
+            <image wx:for="{{5 - item.score}}" src="{{globalData.rootPath + 'static/images/star-gray.png'}}" wx:key="*this"></image>
+          </view>
+        </view>
+        <view class="comment-item-bottom">
+          <text class="font-type-body-text-1">{{item.comment}}</text>
+          <text class="font-type-body-text-2">{{item.commentDate}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="product-detail-control clearfix">
+    <view class="product-detail-control-icon font-type-body-text-4">
+      <view class="product-detail-control-shopping-cart">
+        <image src="{{globalData.rootPath + 'static/images/shopping-cart.png'}}"></image>
+        <text>购物车</text>
+      </view>
+      <view class="product-detail-control-customer-service">
+        <image src="{{globalData.rootPath + 'static/images/customer-service.png'}}"></image>
+        <text>客服</text>
+      </view>
+      <view class="product-detail-control-collection">
+        <image src="{{globalData.rootPath + 'static/images/collection.png'}}"></image>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class="product-detail-control-button">
+      <button loading="{{loadingCar}}" bindtap="addCar">加入购物车</button>
+      <button loading="{{loadingBuy}}" bindtap="toBuy">立即购买</button>
+    </view>
+  </view>
+</view>

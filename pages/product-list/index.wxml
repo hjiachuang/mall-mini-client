@@ -1,0 +1,10 @@
+<!--商品列表页-->
+<view class="product-list">
+  <my-search value="{{search}}" bindinput="bindInput" bindsearch="bindSearch"></my-search>
+  <view class="product-list-content">
+    <block wx:for="{{productList.list}}" wx:key="id">
+      <product-item class="product-list-item" product="{{item}}" data-id="{{item.id}}" bindtap="toProductDetail">
+      </product-item>
+    </block>
+  </view>
+</view>

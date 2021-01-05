@@ -1,0 +1,35 @@
+<!--首页-->
+<view class="index">
+  <view class="index-seacher-wrapper">
+    <my-search bindsearch="bindSearch"></my-search>
+  </view>
+  <view class="index-banner-wrapper" wx:if="{{bannerImg.length > 0}}">
+    <swiper class="index-banner-swiper" indicator-dots="true" indicator-active-color="#fff" indicator-color="#ccc"
+        autoplay="true" circular="true">
+      <block wx:for="{{bannerImg}}" wx:key="*this">
+        <swiper-item class="index-banner-swiper-item {{'item' + index}}">
+          <image src="{{globalData.rootPath + item}}" mode="widthFix" lazy-load="true"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="index-navbar-wrapper">
+    <view wx:for="{{classificationList.name}}" wx:key="*this" data-name="{{item}}" bindtap="choiceNavbar">
+      <view class="navbar-image" style="background-image: url({{globalData.rootPath + classificationList.imgUrl}}); background-position: {{index * -100}}rpx 0"></view>
+      <view class="navbar-name font-type-body-text-1">{{item}}</view>
+    </view>
+  </view>
+  <view class="index-recommend-wrapper" wx:if="{{recommendList}}">
+    <view class="title">
+      <image src="{{globalData.rootPath + recommendList.imgUrl}}"></image>
+    </view>
+    <view class="recommend-list">
+      <block wx:for="{{recommendList.commodities}}" wx:key="id">
+        <product-item product="{{item}}" data-id="{{item.id}}" bindtap="toProductItem"></product-item>
+      </block>
+    </view>
+  </view>
+  <view class="index-footer-wrapper font-type-body-text-4">
+    <text>到底啦</text>
+  </view>
+</view>

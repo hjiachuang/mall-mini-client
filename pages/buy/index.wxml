@@ -1,0 +1,105 @@
+<!--确认订单页-->
+<view class="buy">
+  <view class="address" bindtap="selectAddress">
+    <view class="address-left">
+      <view>
+        <text class="address-name font-type-subtitle-bold">{{address.addressee}}</text>
+        <text class="address-phone font-type-body-text-2">{{address.phoneNumber}}</text>
+      </view>
+      <view>
+        <text class="address-address font-type-body-text-4">{{address.area}} {{address.detailedAddress}}</text>
+      </view>
+    </view>
+    <view class="address-right">
+      <image src="{{globalData.rootPath + 'static/images/right.png'}}"></image>
+    </view>
+  </view>
+  <view class="product mt-20" bindtap="toDetail" wx:if="{{product}}">
+    <view class="product-item" wx:for="{{product}}" wx:key="id">
+      <view class="product-item-top">
+        <view class="product-left">
+          <image src="{{globalData.rootPath + item.mainPic[0]}}"></image>
+        </view>
+        <view class="product-center">
+          <view class="product-name font-type-body-text-1">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="product-skus font-type-body-text-4">
+            <view wx:if="{{item.skus['规格']}}">规格: {{item.skus['规格']}}</view>
+            <view wx:if="{{item.skus['颜色']}}">颜色: {{item.skus['颜色']}}</view>
+          </view>
+        </view>
+        <view class="product-right font-type-body-text-2">
+          <text>¥ {{item.discount}}</text>
+          <text>¥ {{item.original}}</text>
+        </view>
+      </view>
+      <view class="product-item-bottom clearfix">
+        <text class="product-item-amount float-left font-type-body-text-3">购买数量</text>
+        <view class="amount-control float-right">
+          <view class="reduce" data-mode="reduce" data-index="{{index}}" catchtap="changeAmount">
+            <image
+              src="{{buyAmount[index] > 1? globalData.rootPath + 'static/images/减号.png': globalData.rootPath + 'static/images/减号-灰.png'}}">
+            </image>
+          </view>
+          <text>{{buyAmount[index]}}</text>
+          <view class="add" data-mode="add" data-index="{{index}}" catchtap="changeAmount">
+            <image
+              src="{{buyAmount[index] < item.stock? globalData.rootPath + 'static/images/加号.png': globalData.rootPath + 'static/images/加号-灰.png'}}">
+            </image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="miscellaneous mt-20 font-type-body-text-3">
+    <view class="distribution">
+      <text class="float-left">配送方式</text>
+      <text class="float-left distribution-mode">普通配送</text>
+      <text class="float-right">¥ {{carriage}}</text>
+    </view>
+    <view class="coupon">
+      <text class="float-left">优惠券</text>
+      <view class="float-right" bindtap="showCoupon">
+        <text wx:if="{{couponsToBeUsed.length === 0}}">有{{availableCoupons.length}}张优惠券</text>
+        <text wx:if="{{couponsToBeUsed.length !== 0 && preferentialAmount !== '包邮'}}">-¥ {{preferentialAmount}}</text>
+        <text wx:if="{{couponsToBeUsed.length !== 0 && preferentialAmount === '包邮'}}">包邮</text>
+        <image src="{{globalData.rootPath + 'static/images/right.png'}}"></image>
+      </view>
+    </view>
+    <view class="remarks">
+      <text>订单备注</text>
+      <view class="remarks-input">
+        <input type="text" placeholder="选填,请先和商家协商一致" placeholder-class="remarks-input-placeholder" />
+      </view>
+    </view>
+  </view>
+  <view class="summary mt-20 font-type-body-text-3">
+    <view class="total">
+      <text class="float-left">商品金额</text>
+      <text class="float-right">¥ {{total}}</text>
+    </view>
+  </view>
+  <view class="buy-button">
+    <button bindtap="submit">提交订单</button>
+  </view>
+  <mp-half-screen-dialog show="{{showHalfScreenDialog}}" maskClosable="true">
+    <view slot="title">
+      <text>优惠券</text>
+    </view>
+    <view slot="desc">
+      <view class="coupon-item clearfix">
+        <text class="float-left">不使用优惠券</text>
+        <view class="float-right" data-coupon="noUse" bindtap="selectCoupon">
+          <checkbox checked="{{couponsToBeUsed.length === 0}}"></checkbox>
+        </view>
+      </view>
+      <view class="coupon-item clearfix" wx:for="{{availableCoupons}}" wx:key="id">
+        <text class="float-left">{{item.title}}</text>
+        <view class="float-right" data-coupon="{{item.id}}" bindtap="selectCoupon">
+          <checkbox checked="{{couponsToBeUsed[0].id === item.id}}"></checkbox>
+        </view>
+      </view>
+    </view>
+  </mp-half-screen-dialog>
+</view>

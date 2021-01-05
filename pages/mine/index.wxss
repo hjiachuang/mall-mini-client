@@ -1,0 +1,129 @@
+/* pages/mine/mine.wxss */
+.mine {
+  background-color: var(--color-13);
+  min-height: 100vh;
+  padding: 24rpx 24rpx 0;
+  box-sizing: border-box;
+}
+
+.mine-top {
+  width: 100%;
+  height: 400rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  background-image: url("https://api.aidioute.cn/mall/static/images/mine-page-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mine-info {
+  
+}
+
+.mine-info-content {
+  width: 491rpx;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+}
+
+.mine-info-user, .mine-info-login {
+  padding: 0 50rpx;
+}
+
+.mine-info-name {
+  display: block;
+  width: 100%;
+  padding: 6rpx 28rpx;
+  border-radius: 8rpx;
+  background-color: var(--color-4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.mine-info-login button {
+  width: auto !important;
+  padding: 6rpx 28rpx !important;
+  background-color: var(--color-4);
+}
+
+.mine-info-avatar {
+  width: 211rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mine-info-has-avatar, .mine-info-no-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  padding: 10rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.mine-info-has-avatar image, .mine-info-no-avatar image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.mine-order-other {
+  width: 680rpx;
+  margin: 50rpx auto 0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  border-radius: 20rpx;
+  background-color: rgba(251,186,50,0.5);
+}
+
+.mine-order-other view {
+  height: 120rpx;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mine-order-other image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.mine-order-other text {
+  margin-top: 10rpx;
+}
+
+.mine-bottom {
+  width: 100%;
+  padding: 0 20rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  margin-top: 24rpx;
+}
+
+.mine-bottom .text-line-container {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.mine-bottom .mine-other-about-us {
+  border-bottom: 0rpx;
+}
+
+.mine-bottom .font-type-body-text-1 {
+  line-height: 100rpx;
+}
+
+.mine-bottom image {
+  width: 30rpx;
+  height: 30rpx;
+}

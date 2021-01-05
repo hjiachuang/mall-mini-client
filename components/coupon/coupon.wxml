@@ -1,0 +1,10 @@
+<!--优惠券组件-->
+<view class="coupon-component {{type}}">
+  <image src="{{globalData.rootPath + 'static/images/coupon-' + type + '-background.png'}}" mode="heightFix"></image>
+  <text class="title">{{couponData.title}}</text>
+  <view class="quota">
+    <text wx:if="{{couponData.type !== 'full-free-shipping'}}">¥{{couponData.quota}}</text>
+    <text wx:else>包邮</text>
+  </view>
+  <text class="period-of-validity">{{couponData.periodOfValidity}}</text>
+</view>

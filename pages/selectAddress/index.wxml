@@ -1,0 +1,36 @@
+<!--我的收货地址页-->
+<view class="select-address">
+  <view class="no-address" wx:if="{{address.length === 0}}">
+    <image src="{{globalData.rootPath + 'static/images/no-address.png'}}"></image>
+    <text class="font-type-body-text-1">还没有收货地址哦~</text>
+    <button class="to-add">去添加</button>
+  </view>
+  <view class="has-address" wx:else>
+    <view class="address-item" wx:for="{{address}}" wx:key="addressId" data-index="{{index}}" bindtap="selectAddress">
+      <view class="top font-type-subtitle-bold">
+        <text>收货人: {{item.addressee}}</text>
+        <text>{{item.phoneNumber}}</text>
+      </view>
+      <view class="center font-type-body-text-4">
+        <text>{{item.area}} {{item.detailedAddress}}</text>
+      </view>
+      <view class="bottom clearfix">
+        <view class="bottom-left">
+          <checkbox checked="{{item.default}}" disabled></checkbox>
+          <text class="{{item.default? 'text-red':''}}">默认地址</text>
+        </view>
+        <view class="bottom-right">
+          <view class="bottom-right-edit" data-addressId="{{item.addressId}}" catchtap="toPage">
+            <image src="{{globalData.rootPath + 'static/images/edit-icon.png'}}"></image>
+            <text>编辑</text>
+          </view>
+          <view class="bottom-right-delete" data-addressId="{{item.addressId}}" catchtap="deleteAddress">
+            <image src="{{globalData.rootPath + 'static/images/delete-icon.png'}}"></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button class="add-address" catchtap="toPage">添加新地址</button>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+/* components/product-list/index.wxss */
+.product-item {
+  border-radius: 16rpx;
+  padding-bottom: 10rpx;
+  box-shadow: 0 0 20rpx rgba(12,17,18,0.05);
+  overflow: hidden;
+}
+
+.product-item-image image {
+  width: 100%;
+  height: auto;
+}
+
+.product-item-title text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product-item-title, .product-item-price, .product-item-sales {
+  padding: 10rpx 14rpx 0;
+}
+
+.product-item-price-current {
+  color: var(--color-7);
+}
+
+.product-item-price-original {
+  margin-left: 10rpx;
+  text-decoration: line-through;
+}

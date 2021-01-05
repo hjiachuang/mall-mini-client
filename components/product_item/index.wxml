@@ -1,0 +1,16 @@
+<!--商品列表项组件-->
+<view class="product-item">
+  <view class="product-item-image">
+    <image src="{{globalData.rootPath + product.mainPic[0]}}" mode="widthFix" lazy-load="true"></image>
+  </view>
+  <view class="product-item-title font-type-subtitle-bold">
+    <text>{{product.name}}</text>
+  </view>
+  <view class="product-item-price">
+    <text class="product-item-price-current font-type-body-text-1">¥{{product.currentPrice}}</text>
+    <text class="product-item-price-original  font-type-body-text-3">¥{{product.originalPrice}}</text>
+  </view>
+  <view class="product-item-sales font-type-body-text-1">
+    <text>销量: {{product.sales}}</text>
+  </view>
+</view>

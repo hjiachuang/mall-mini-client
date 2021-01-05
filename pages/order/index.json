@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-order-list": "/components/order-item/order-item"
+  },
+  "navigationBarTitleText": "订单页"
+}

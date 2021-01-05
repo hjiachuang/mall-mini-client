@@ -1,0 +1,113 @@
+/**app.wxss**/
+page {
+  --color-1: #57636F;
+  --color-2: #126881;
+  --color-3: #7BCFE9;
+  --color-4: #FBBA32;
+  --color-5: #FFA771;
+  --color-6: #E4126B;
+  --color-7: #E41A4A;
+  --color-8: #57636F;
+  --color-9: #7A8D9C;
+  --color-10: #126881;
+  --color-11: #126881;
+  --color-12: #ACBAC3;
+  --color-13: #F6F6F7;
+}
+
+image {
+  vertical-align: middle;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.font-type-header-h1 {
+  font-size: 40rpx !important;
+  font-weight: 600 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-header-h2 {
+  font-size: 36rpx !important;
+  font-weight: 600 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-subtitle-normal {
+  font-size: 30rpx !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-subtitle-bold {
+  font-size: 30rpx !important;
+  font-weight: 700 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-body-text-1 {
+  font-size: 26rpx !important;
+  font-weight: 700 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-body-text-2 {
+  font-size: 26rpx !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-body-text-3 {
+  font-size: 22rpx !important;
+  font-weight: 700 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-body-text-4 {
+  font-size: 22rpx !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-body-text-5 {
+  font-size: 18rpx !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-body-text-6 {
+  font-size: 16rpx !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
+
+.font-type-body-text-7 {
+  font-size: 14rpx !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: var(--color-1);
+}
